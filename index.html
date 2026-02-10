@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- Meta tags essenciais -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sistema de Chamados de TI - Login">
+    
+    <!-- Título da página -->
+    <title>Sistema de Chamados de TI - Login</title>
+    
+    <!-- Arquivo CSS externo -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Container principal da tela de login -->
+    <div class="container">
+        <!-- Logo ou título do sistema -->
+        <div class="login-box">
+            <h1>Sistema de Chamados</h1>
+            <p class="subtitle">TI - Suporte Técnico</p>
+            
+            <!-- Formulário de login -->
+            <form id="loginForm">
+                
+                <!-- Campo de usuário -->
+                <div class="form-group">
+                    <label for="username">Usuário:</label>
+                    <input 
+                        type="text" 
+                        id="username" 
+                        name="username" 
+                        placeholder="Digite seu usuário"
+                        required
+                    >
+                </div>
+
+                <!-- Campo de senha -->
+                <div class="form-group">
+                    <label for="password">Senha:</label>
+                    <input 
+                        type="password" 
+                        id="password" 
+                        name="password" 
+                        placeholder="Digite sua senha"
+                        required
+                    >
+                </div>
+
+                <!-- Botão de envio do formulário -->
+                <button type="submit" class="btn-login">Entrar</button>
+            </form>
+
+            <!-- Mensagem de erro (inicialmente vazia, preenchida pelo JavaScript) -->
+            <div id="errorMessage" class="error-message"></div>
+        </div>
+    </div>
+
+    <!-- Arquivo JavaScript externo para autenticação -->
+    <script src="auth.js"></script>
+</body>
+</html>

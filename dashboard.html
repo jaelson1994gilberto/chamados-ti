@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- Meta tags essenciais -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sistema de Chamados de TI - Dashboard">
+    
+    <!-- Título da página -->
+    <title>Sistema de Chamados de TI - Dashboard</title>
+    
+    <!-- Arquivo CSS externo -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Chart.js via CDN (para gráficos) -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+</head>
+<body>
+    <!-- Header com barra de navegação -->
+    <header class="header">
+        <div class="header-content">
+            <h1>Sistema de Chamados de TI</h1>
+            <div class="user-info">
+                <span>Usuário: <strong id="usuarioLogado">-</strong></span>
+                <button id="btnSair" class="btn-sair">Sair</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Container principal -->
+    <div class="container-dashboard">
+        
+        <!-- Seção esquerda: Formulário e Filtro -->
+        <div class="sidebar">
+            
+            <!-- Seção de formulário para criar chamado -->
+            <section class="form-section">
+                <h2>Novo Chamado</h2>
+                
+                <!-- Formulário de criação de chamado -->
+                <form id="formChamado">
+                    
+                    <!-- Campo: Nome do solicitante -->
+                    <div class="form-group">
+                        <label for="solicitante">Solicitante:</label>
+                        <input 
+                            type="text" 
+                            id="solicitante" 
+                            name="solicitante"
+                            placeholder="Seu nome"
+                            required
+                        >
+                    </div>
+
+                    <!-- Campo: Tipo do problema (dropdown) -->
+                    <div class="form-group">
+                        <label for="tipoProblem">Tipo do Problema:</label>
+                        <select id="tipoProblem" name="tipoProblem" required>
+                            <option value="">-- Selecione --</option>
+                            <option value="Software">Software</option>
+                            <option value="Hardware">Hardware</option>
+                            <option value="Rede">Rede</option>
+                        </select>
+                    </div>
+
+                    <!-- Campo: Descrição do problema -->
+                    <div class="form-group">
+                        <label for="descricao">Descrição:</label>
+                        <textarea 
+                            id="descricao" 
+                            name="descricao"
+                            placeholder="Descreva o problema com detalhes"
+                            rows="4"
+                            required
+                        ></textarea>
+                    </div>
+
+                    <!-- Campo: Status do chamado -->
+                    <div class="form-group">
+                        <label for="status">Status:</label>
+                        <select id="status" name="status" required>
+                            <option value="Aberto">Aberto</option>
+                            <option value="Em andamento">Em andamento</option>
+                            <option value="Resolvido">Resolvido</option>
+                        </select>
+                    </div>
+
+                    <!-- Botão de submit -->
+                    <button type="submit" class="btn-submit">Criar Chamado</button>
+                </form>
+            </section>
+
+            <!-- Seção de filtro por status -->
+            <section class="filter-section">
+                <h2>Filtrar por Status</h2>
+                
+                <select id="filtroStatus" class="select-filtro">
+                    <option value="">Todos os Status</option>
+                    <option value="Aberto">Aberto</option>
+                    <option value="Em andamento">Em andamento</option>
+                    <option value="Resolvido">Resolvido</option>
+                </select>
+            </section>
+
+        </div>
+
+        <!-- Seção direita: Tabela e Gráfico -->
+        <div class="main-content">
+            
+            <!-- Seção da tabela de chamados -->
+            <section class="table-section">
+                <h2>Chamados Registrados</h2>
+                
+                <!-- Tabela para listar chamados -->
+                <div class="table-wrapper">
+                    <table class="tabela-chamados">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Solicitante</th>
+                                <th>Tipo</th>
+                                <th>Descrição</th>
+                                <th>Status</th>
+                                <th>Ação</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabelaChamados">
+                            <!-- Linhas da tabela serão inseridas aqui via JavaScript -->
+                            <tr>
+                                <td colspan="6" style="text-align: center; color: #999;">
+                                    Nenhum chamado registrado
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Seção do gráfico -->
+            <section class="chart-section">
+                <h2>Gráfico de Chamados por Status</h2>
+                
+                <!-- Canvas para o gráfico Chart.js -->
+                <canvas id="grafico"></canvas>
+            </section>
+
+        </div>
+
+    </div>
+
+    <!-- Arquivo JavaScript externo para o dashboard -->
+    <script src="script.js"></script>
+</body>
+</html>
