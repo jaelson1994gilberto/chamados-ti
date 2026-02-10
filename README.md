@@ -42,3 +42,12 @@ Permite criar, listar e filtrar chamados de TI, com dashboard gráfico e armazen
 - Login real com Firebase Auth  
 - Banco de dados em nuvem (Firebase Firestore)  
 - Dashboard mais avançado
+### Tela de Login  
+![Login](login.png)
+
+### Dashboard  
+![Dashboard](dashboard.png)
+
+### Gráfico de Chamados  
+![Gráfico](grafico.png)
+Adiciona screenshots ao README
